@@ -26,7 +26,7 @@ public class Practice {
         driver.get(baseUrl);
     }
 
-    @Test
+    @Test(priority = -1)
     public void dropDownTest() throws Exception{
         WebElement cardropDown = driver.findElement(By.xpath("//select[@id='carselect']"));
         Select sel = new Select(cardropDown);
@@ -38,7 +38,7 @@ public class Practice {
         Thread.sleep(2000);
 
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/Screenshots" + "testAmit2"+".png"));
+        FileUtils.copyFile(file, new File("src/test/Screenshots" + "testAmit5"+".png"));
 
         List<WebElement> selectedOptions = sel.getAllSelectedOptions();
         for(WebElement option : selectedOptions){
@@ -48,7 +48,7 @@ public class Practice {
 
 
     }
-    @Test
+    @Test(priority = 0)
     public void openWindowTest() throws Exception{
         WebElement openwindowBtn = driver.findElement(By.xpath("//button[@id='openwindow']"));
         openwindowBtn.click();
@@ -67,7 +67,7 @@ public class Practice {
                 searchBtn.click();
                 Thread.sleep(2000);
                 File file= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(file,new File("src/test/Screenshots" + "testAmit3"+".png"));
+                FileUtils.copyFile(file,new File("src/test/Screenshots" + "testAmit6"+".png"));
                 driver.close();
 
             }
